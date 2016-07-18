@@ -59,7 +59,7 @@ body {
 }
 @mixin highlighted-bold-text {
 	font-weight: bold;
-	background-color: $lightContrast;
+	background-color: $darkContrast;
 }
 
 .highlighted {
@@ -76,48 +76,50 @@ h2 {
 }
 p {
 	color:$white;
-	font-size:1.2ems;
-	line-height:1.4ems;
+	font-size:1.2em;
+	line-height:1.4em;
 }
 a {
 	color: $lightContrast;
 }
 .introText	{
-	font-size:140%;
+	font-size:1.3em;
 	color:$white;
 	margin:5%;
-	line-height:150%;
+	line-height:1.5em;
 }
 .boxText	{
-	font-size:140%;
-	line-height:130%;
+	font-size:1.6em;
+	line-height:1.8em;
 	color:$white;
 }
 .userAsk	{
-	font-size:170%;
+	font-size:1.6em;
 	color:$white;
 	margin:5%;
-	line-height:150%;
+	line-height:1.8em;
 }
-
+.currency_symbol	{
+	font-size:2.5em;
+}
 .modHeads	{
-	font-size:130%;
+	font-size:1.4em;
 	color:$white;
 	font-weight:bold;
-	margin-top:10px;
+	margin-top:20px;
 }
 
 .modRates	{
-	font-size:90%;
+	font-size:1.1em;
 	color:$white;
 }
 
 .modReco	{
-	font-size: 1.8ems;
+	font-size: 1.8em;
 	color:$white;
 }
 .modRecoSmall	{
-	font-size:1.1ems;
+	font-size:1.1em;
 	color:$white;
 }
 
@@ -135,6 +137,7 @@ header {
 	background-color: $baseColor;
 	margin: 10px;
 	padding: 5px;
+	text-align: center;
 }
 
 .hidden	{
@@ -143,13 +146,29 @@ header {
 
 #stanBox	{
 	height:auto;
-	width:47%; 
-	float:left;
+	width:70%; 
 	display:inline-block;
 	background-color:$darkContrast;
-	padding:5px;
-	margin:5px;
+	padding:10px;
+	margin:0 auto;
 	text-align:center;
+}
+
+#modBox2	{
+	margin: 0 auto;
+	width:70%;
+}
+
+#introduction	{
+	text-align:center;
+}
+#recommendation	{
+	width:70%;
+	margin:0 auto 30px;
+}
+.modCont	{
+	text-align:center;
+	margin: 20px 0;
 }
 
 // User input text box
@@ -161,8 +180,7 @@ input.bill_amt	{
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #EAEAEA));
     border: 1px solid #CACACA;
     color: #444;
-    font-size: 1.4em;
-    margin: 0 0 15px;
+    font-size: 1.8em;    margin: 0 0 10px;
     padding: 5px 9px;
     width: 200px;
 }

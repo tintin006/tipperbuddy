@@ -152,7 +152,7 @@ body {
 
 .highlighted {
   font-weight: bold;
-  background-color: #FF9900; }
+  background-color: #885200; }
 
 h1 {
   font: 240% Galada, cursive;
@@ -165,45 +165,48 @@ h2 {
 
 p {
   color: #EFEFEF;
-  font-size: 1.2ems;
-  line-height: 1.4ems; }
+  font-size: 1.2em;
+  line-height: 1.4em; }
 
 a {
   color: #FF9900; }
 
 .introText {
-  font-size: 140%;
+  font-size: 1.3em;
   color: #EFEFEF;
   margin: 5%;
-  line-height: 150%; }
+  line-height: 1.5em; }
 
 .boxText {
-  font-size: 140%;
-  line-height: 130%;
+  font-size: 1.6em;
+  line-height: 1.8em;
   color: #EFEFEF; }
 
 .userAsk {
-  font-size: 170%;
+  font-size: 1.6em;
   color: #EFEFEF;
   margin: 5%;
-  line-height: 150%; }
+  line-height: 1.8em; }
+
+.currency_symbol {
+  font-size: 2.5em; }
 
 .modHeads {
-  font-size: 130%;
+  font-size: 1.4em;
   color: #EFEFEF;
   font-weight: bold;
-  margin-top: 10px; }
+  margin-top: 20px; }
 
 .modRates {
-  font-size: 90%;
+  font-size: 1.1em;
   color: #EFEFEF; }
 
 .modReco {
-  font-size: 1.8ems;
+  font-size: 1.8em;
   color: #EFEFEF; }
 
 .modRecoSmall {
-  font-size: 1.1ems;
+  font-size: 1.1em;
   color: #EFEFEF; }
 
 header {
@@ -215,10 +218,35 @@ header {
 .container {
   background-color: #402600;
   margin: 10px;
-  padding: 5px; }
+  padding: 5px;
+  text-align: center; }
 
 .hidden {
   display: none; }
+
+#stanBox {
+  height: auto;
+  width: 70%;
+  display: inline-block;
+  background-color: #885200;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center; }
+
+#modBox2 {
+  margin: 0 auto;
+  width: 70%; }
+
+#introduction {
+  text-align: center; }
+
+#recommendation {
+  width: 70%;
+  margin: 0 auto 30px; }
+
+.modCont {
+  text-align: center;
+  margin: 20px 0; }
 
 input.bill_amt {
   -webkit-border-radius: 4px;
@@ -230,8 +258,8 @@ input.bill_amt {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #EAEAEA));
   border: 1px solid #CACACA;
   color: #444;
-  font-size: 1.4em;
-  margin: 0 0 15px;
+  font-size: 1.8em;
+  margin: 0 0 10px;
   padding: 5px 9px;
   width: 200px; }
 
@@ -243,16 +271,6 @@ input.bill_amt {
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
   transform: scale(1.05); }
-
-#stanBox {
-  height: auto;
-  width: 47%;
-  float: left;
-  display: inline-block;
-  background-color: #885200;
-  padding: 5px;
-  margin: 5px;
-  text-align: center; }
 
 .shiny_button {
   font-size: 28px;
