@@ -1,0 +1,336 @@
+/* Tipper Buddy Stylesheet -- mostly hand-rolled with a bit of help from some leftovers, imports, and mixins. -chl */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import "https://fonts.googleapis.com/css?family=Galada|Roboto";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+Here are the cool styles for a thumb slider. 
+I got this from Daniel Stern's site (not THAT Daniel Stern. I don't think. http://danielstern.ca/range.css/#/) 
+I'm importing it using SASS because it's kind of unwieldy otherwise, and because I can.
+chl
+*/
+input[type=range] {
+  -webkit-appearance: none;
+  width: 60%;
+  margin: 11.55px 0; }
+
+input[type=range]:focus {
+  outline: none; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 60%;
+  height: 12.9px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3068a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101; }
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 2.7px 2.7px 3.6px #000000, 0px 0px 2.7px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 30px;
+  border-radius: 9px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11.75px; }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3674bd; }
+
+input[type=range]::-moz-range-track {
+  width: 60%;
+  height: 12.9px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3068a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101; }
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 2.7px 2.7px 3.6px #000000, 0px 0px 2.7px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 30px;
+  border-radius: 9px;
+  background: #ffffff;
+  cursor: pointer; }
+
+input[type=range]::-ms-track {
+  width: 60%;
+  height: 12.9px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent; }
+
+input[type=range]::-ms-fill-lower {
+  background: #2a5c95;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; }
+
+input[type=range]::-ms-fill-upper {
+  background: #3068a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; }
+
+input[type=range]::-ms-thumb {
+  box-shadow: 2.7px 2.7px 3.6px #000000, 0px 0px 2.7px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 30px;
+  border-radius: 9px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 12.9px; }
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #3068a9; }
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #3674bd; }
+
+.group:before, .group:after {
+  content: "";
+  display: table; }
+.group:after {
+  clear: both; }
+.group {
+  zoom: 1; }
+
+body {
+  font: 100% Roboto, sans-serif;
+  background-color: #402600; }
+
+.highlighted {
+  font-weight: bold;
+  background-color: #FF9900; }
+
+h1 {
+  font: 240% Galada, cursive;
+  color: #FFCC00; }
+
+h2 {
+  font: 180% Galada, cursive;
+  color: #FFCC00;
+  margin-top: 20px; }
+
+p {
+  color: #EFEFEF;
+  font-size: 1.2ems;
+  line-height: 1.4ems; }
+
+a {
+  color: #FF9900; }
+
+.introText {
+  font-size: 140%;
+  color: #EFEFEF;
+  margin: 5%;
+  line-height: 150%; }
+
+.boxText {
+  font-size: 140%;
+  line-height: 130%;
+  color: #EFEFEF; }
+
+.userAsk {
+  font-size: 170%;
+  color: #EFEFEF;
+  margin: 5%;
+  line-height: 150%; }
+
+.modHeads {
+  font-size: 130%;
+  color: #EFEFEF;
+  font-weight: bold;
+  margin-top: 10px; }
+
+.modRates {
+  font-size: 90%;
+  color: #EFEFEF; }
+
+.modReco {
+  font-size: 1.8ems;
+  color: #EFEFEF; }
+
+.modRecoSmall {
+  font-size: 1.1ems;
+  color: #EFEFEF; }
+
+header {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin: 0px auto; }
+
+.container {
+  background-color: #402600;
+  margin: 10px;
+  padding: 5px; }
+
+.hidden {
+  display: none; }
+
+input.bill_amt {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #EAEAEA;
+  background: -moz-linear-gradient(top, #FFF, #EAEAEA);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #EAEAEA));
+  border: 1px solid #CACACA;
+  color: #444;
+  font-size: 1.4em;
+  margin: 0 0 15px;
+  padding: 5px 9px;
+  width: 200px; }
+
+.bill_amt:focus {
+  background: #EFEFEF;
+  -webkit-box-shadow: 0 0 25px #390;
+  -moz-box-shadow: 0 0 25px #390;
+  box-shadow: 0 0 25px #390;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05); }
+
+#stanBox {
+  height: auto;
+  width: 47%;
+  float: left;
+  display: inline-block;
+  background-color: #885200;
+  padding: 5px;
+  margin: 5px;
+  text-align: center; }
+
+.shiny_button {
+  font-size: 28px;
+  font-family: Arial;
+  font-weight: normal;
+  text-decoration: inherit;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid #eda933;
+  padding: 16px 30px;
+  text-shadow: 1px 1px 0px #cd8a15;
+  -webkit-box-shadow: inset 1px 1px 0px 0px #fed897;
+  -moz-box-shadow: inset 1px 1px 0px 0px #fed897;
+  box-shadow: inset 1px 1px 0px 0px #fed897;
+  cursor: pointer;
+  color: #EFEFEF;
+  display: inline-block;
+  background: -webkit-linear-gradient(90deg, #d29105 5%, #f6b33d 100%);
+  background: -moz-linear-gradient(90deg, #d29105 5%, #f6b33d 100%);
+  background: -ms-linear-gradient(90deg, #d29105 5%, #f6b33d 100%);
+  background: linear-gradient(180deg, #f6b33d 5%, #d29105 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6b33d",endColorstr="#d29105"); }
+
+.shiny_button:hover {
+  background: -webkit-linear-gradient(90deg, #f6b33d 5%, #d29105 100%);
+  background: -moz-linear-gradient(90deg, #f6b33d 5%, #d29105 100%);
+  background: -ms-linear-gradient(90deg, #f6b33d 5%, #d29105 100%);
+  background: linear-gradient(180deg, #d29105 5%, #f6b33d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d29105",endColorstr="#f6b33d"); }
+
+.shiny_button:active {
+  position: relative;
+  top: 1px; }
+
+.container {
+  width: 940px;
+  border: 1px solid #FFCC00; }
+  @media screen and (max-width: 940px) {
+    .container {
+      width: auto; } }
+  .container .main-content {
+    width: 600px; }
+    @media screen and (max-width: 940px) {
+      .container .main-content {
+        width: 63.8%; } }
+
+.container {
+  float: left;
+  margin-right: 20px;
+  width: 940px;
+  float: none;
+  margin: 0 auto; }
+  .container:before, .container:after {
+    content: "";
+    display: table; }
+  .container:after {
+    clear: both; }
+  .container {
+    zoom: 1; }
+
+.main-content {
+  float: left;
+  margin-right: 20px;
+  width: 620px; }
+
+.sidebar {
+  float: left;
+  margin-right: 20px;
+  width: 300px;
+  margin-right: 0; }
+
+.container {
+  width: 97.91667%; }
+  .container .main-content {
+    width: 65.95745%; }
+  .container .sidebar {
+    width: 31.91489%; }
+
+/*# sourceMappingURL=styles.css.map */

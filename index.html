@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Tipper Buddy</title>
+  <meta name="description" content="User-friendly gratuities calculator">
+  <meta name="author" content="Chris Linder">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+
+<body>
+
+	<div id="main-content">
+		
+		<header style="text-align:center;">
+			<h1>Tipper Buddy</h1>
+		</header>
+
+		<div id="introduction"class="container" style="text-align:center;">
+			<p class="introText">Generally, how much you tip in a <span class="highlighted">restaurant</span> depends on where you live, how good the service is and what your finances are. For reasonable service, we suggest the standard to be around <span class="highlighted">20% of your total bill</span> before taxes. </p>
+			<p class="userAsk"><label for="bill_amt" >Enter the amount of your bill in dollars and cents (ie 35.70):</label></p>
+			<p class="introText"><span class="currency_symbol" style="font-size:4ems;;">$</span> <input type="text" id="bill_amt" class="bill_amt" placeholder="Bill Amount" onChange="this.value=convertToFloat(this.value);"/></p>
+			<input name="button" type="button" id="btnCalc" class="shiny_button" onclick="calcStandardTip();" value="Calculate my tip!"></input>
+		</div>
+
+		<div id ="stanBox"><p class="boxText">The standard 20% tip would be $<span id="standardTip"></span>.<br /> Your total bill would then be $<span id="totalBill"></span>.</p></div>
+		
+		<div id = "modBox2" style="float:right;width:47%;"><button class="shiny_button" onclick="showMods();">Modify Tip Based on Service</button></div>
+
+		<div id="modifiers" class="container hidden" style="text-align:center;">
+
+		<h2>Service Modifiers</h2>
+			<div class="modCont">
+				<p class="modHeads">Rate the friendliness of your server:</p>
+				<p class="modRates">What a grouch!<input id="m_friendly" type ="range" min="0" max="50" value="40" onchange="calcStandardTip()"/>Super friendly</p>
+			</div>
+
+			<div class="modCont">
+				<p class="modHeads">Was your server prompt/attentive?</p>
+				<p class="modRates">Never saw them<input id="m_prompt" type ="range" min="0" max="50" value="40" onchange="calcStandardTip()"/>Yes!</p>
+			</div>
+
+			<div class="modCont">
+				<p class="modHeads">Was your order taken, prepared, and delivered accurately?</p>
+				<p class="modRates">Complete disaster<input id="m_order" type="range" min="0" max="50" value="40" onchange="calcStandardTip()"/>Everything was perfect!</p>
+			</div>
+
+			<div class="modCont">
+				<p class="modHeads">How was your overall experience?</p>
+				<p class="modRates">Never again!<input id="m_overall" type="range" min="0" max="100" value="80" onchange="calcStandardTip()"/>This place is awesome!</p>
+			</div>
+
+			<div id="recommendation" style="width:70%;margin:0 auto 30px;">
+				<h2>Recommendations</h2>
+					<p id="impression" class="modReco"></p>
+					<p class="modReco">Your recommended tip is $<span id="recoTip"></span>, which works out to around <span id="recoPercent"></span>% percent. Your total bill would then be $<span id="recoBill"></span>.</p>
+					<p class="modRecoSmall">For comparison, the standard 20% tip would be $<span id="standardTip2"></span>, with your total bill coming out to $<span id="totalBill2"></span>.</p>
+			</div>
+			
+		</div>
+
+	</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>

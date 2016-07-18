@@ -1,0 +1,286 @@
+/* Tipper Buddy Stylesheet -- mostly hand-rolled with a bit of help from some leftovers, imports, and mixins. -chl */
+
+
+//imports
+@import 'reset';
+@import 'https://fonts.googleapis.com/css?family=Galada|Roboto';
+@import 'slider';
+
+//variables  -- sitewide (or "page-wide" in this case) colors
+
+$baseColor: #402600;
+$accentColor: #FFCC00;
+$white: #EFEFEF;
+$darkContrast: #885200;
+$lightContrast: #FF9900;
+
+
+//mixins -- what's SASS without some mixins? Here are some rounded corners
+
+@mixin rounded-corners {
+	$rounded-corner-radius: 4px;
+	-webkit-border-radius: $rounded-corner-radius;
+	-moz-border-radius: $rounded-corner-radius;
+	-ms-border-radius: $rounded-corner-radius;
+	border-radius: $rounded-corner-radius;
+}
+
+//mixin clearfix
+
+@mixin clearfix {
+  // For modern browsers
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    zoom:1;
+  }
+}
+
+.group {
+  @include clearfix;
+}
+
+
+
+// typography
+
+body {
+	font: 100% Roboto, sans-serif;
+	background-color: $baseColor;
+}
+@mixin highlighted-bold-text {
+	font-weight: bold;
+	background-color: $lightContrast;
+}
+
+.highlighted {
+  @include highlighted-bold-text;
+}
+h1 {
+	font: 240% Galada, cursive;
+	color: $accentColor;
+}
+h2 {
+	font: 180% Galada, cursive;
+	color: $accentColor;
+	margin-top:20px;
+}
+p {
+	color:$white;
+	font-size:1.2ems;
+	line-height:1.4ems;
+}
+a {
+	color: $lightContrast;
+}
+.introText	{
+	font-size:140%;
+	color:$white;
+	margin:5%;
+	line-height:150%;
+}
+.boxText	{
+	font-size:140%;
+	line-height:130%;
+	color:$white;
+}
+.userAsk	{
+	font-size:170%;
+	color:$white;
+	margin:5%;
+	line-height:150%;
+}
+
+.modHeads	{
+	font-size:130%;
+	color:$white;
+	font-weight:bold;
+	margin-top:10px;
+}
+
+.modRates	{
+	font-size:90%;
+	color:$white;
+}
+
+.modReco	{
+	font-size: 1.8ems;
+	color:$white;
+}
+.modRecoSmall	{
+	font-size:1.1ems;
+	color:$white;
+}
+
+
+// layout
+
+header {
+	width:100%;
+	display:inline-block;
+	text-align:center;
+	margin: 0px auto;
+}
+
+.container {
+	background-color: $baseColor;
+	margin: 10px;
+	padding: 5px;
+}
+
+.hidden	{
+	display:none; 
+}
+
+#stanBox	{
+	height:auto;
+	width:47%; 
+	float:left;
+	display:inline-block;
+	background-color:$darkContrast;
+	padding:5px;
+	margin:5px;
+	text-align:center;
+}
+
+// User input text box
+
+input.bill_amt	{
+    @include rounded-corners;
+    background-color: #EAEAEA;
+    background: -moz-linear-gradient(top, #FFF, #EAEAEA);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #EAEAEA));
+    border: 1px solid #CACACA;
+    color: #444;
+    font-size: 1.4em;
+    margin: 0 0 15px;
+    padding: 5px 9px;
+    width: 200px;
+}
+
+.bill_amt:focus {
+    background: $white;
+    -webkit-box-shadow: 0 0 25px #390;
+    -moz-box-shadow: 0 0 25px #390;
+    box-shadow: 0 0 25px #390;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+
+
+// big buttons
+
+.shiny_button {
+    font-size: 28px;
+    font-family: Arial;
+    font-weight: normal;
+    text-decoration: inherit;
+    @include rounded-corners;
+    border: 2px solid #eda933;
+    padding: 16px 30px;
+    text-shadow: 1px 1px 0px #cd8a15;
+    -webkit-box-shadow: inset 1px 1px 0px 0px #fed897;
+    -moz-box-shadow: inset 1px 1px 0px 0px #fed897;
+    box-shadow: inset 1px 1px 0px 0px #fed897;
+    cursor: pointer;
+    color: $white;
+    display: inline-block;
+    background: -webkit-linear-gradient(90deg, #d29105 5%, #f6b33d 100%);
+    background: -moz-linear-gradient(90deg, #d29105 5%, #f6b33d 100%);
+    background: -ms-linear-gradient(90deg, #d29105 5%, #f6b33d 100%);
+    background: linear-gradient(180deg, #f6b33d 5%, #d29105 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6b33d",endColorstr="#d29105");
+}
+
+.shiny_button:hover {
+    background: -webkit-linear-gradient(90deg, #f6b33d 5%, #d29105 100%);
+    background: -moz-linear-gradient(90deg, #f6b33d 5%, #d29105 100%);
+    background: -ms-linear-gradient(90deg, #f6b33d 5%, #d29105 100%);
+    background: linear-gradient(180deg, #d29105 5%, #f6b33d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d29105",endColorstr="#f6b33d");
+}
+
+.shiny_button:active {
+    position:relative;
+    top: 1px;
+}
+
+
+
+
+//media queries
+
+.container {
+	width: 940px;
+	border: 1px solid $accentColor;
+	// If the device is narrower than 940px, switch to a fluid layout
+	@media screen and (max-width:940px) {
+	  width: auto;
+	}
+	
+	.main-content {
+	  width: 600px;
+	  @media screen and (max-width:940px) {
+      width: 63.8%;
+    }
+	}
+}
+
+
+
+
+
+//grid calculator
+
+// Setting up variables for a 940px, 12-column grid
+$column-width: 60px;    // 12 columns = 720px
+$gutter-width: 20px;    // 11 gutters = 220px
+
+@mixin grid-unit($span) {
+  float: left;
+  margin-right: $gutter-width;
+  width: ($column-width * $span) + ($gutter-width * ($span - 1));
+}
+
+.container {
+  @include clearfix;
+  @include grid-unit(12);
+  float: none;
+  margin: 0 auto;
+}
+
+.main-content {
+  @include grid-unit(8);
+}
+
+.sidebar {
+  @include grid-unit(4);
+  margin-right: 0;
+}
+
+
+//fluid layout
+.container {
+  // result = target / context
+  width: percentage(940px / 960px);
+
+  .main-content {
+    // This is nested inside of .container, so its context is 940px
+    width: percentage(620px / 940px);
+  }
+
+  .sidebar {
+    width: percentage(300px / 940px);
+  }
+}
